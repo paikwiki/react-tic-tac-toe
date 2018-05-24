@@ -82,7 +82,7 @@ class Board extends React.Component {
 
 ### Game 컴포넌트의 handleClick()
 
-`if (calculateWinner(squares) || squares[i]) {`와 `history: history.concat([{ squares: squares }]),` 의미
+`if (calculateWinner(squares) || squares[i]) { ... }`와 `history: history.concat([{ squares: squares }])` 의미는?
 
 ````js
 handleClick(i) {
@@ -101,3 +101,7 @@ handleClick(i) {
   });
 }
 ````
+
+- `if (calculateWinner(squares) || squares[i]) { ... }`는 승패가 결정됐거나, 클릭한 `squares[i]`가 `null이` 아닐 경우 실행되는 블록
+- `history: history.concat([{ squares: squares }])`는 기존의 `history` 배열에 `squares` 객체를 하나 담은 배열을 합쳐서 `history`에 할당함
+- 참고: [concat 메서드(Array)(JavaScript)](https://msdn.microsoft.com/ko-kr/library/2e06zxh0(v=vs.94).aspx)
